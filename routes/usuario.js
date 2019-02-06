@@ -205,4 +205,48 @@ app.delete('/:id', [mdAutenticacion.verificaToken], (req, res) => {
 
 });
 
+
+// ==========================================
+// Leer encuesta por uuid
+// ==========================================
+app.get('/leer/:id', [mdAutenticacion.verificaToken], (req, res) => {
+
+    let usuarioID = req.params.id;
+    Usuario.findOne({ _id: usuarioID }, (err, usuario) => {
+        if (err) {
+            return res.status(500).json({
+                ok: false,
+                mensaje: 'Error al buscar usuario',
+                errors: err
+            });
+        }
+        res.status(200).json({
+            ok: true,
+            usuario: usuario
+        });
+    });
+});
+
+// ==========================================
+// actualizar pass
+// ==========================================
+app.get('/actualizarPass/:id/:pass', [mdAutenticacion.verificaToken], (req, res) => {
+
+    let idUsuario = req.params.id;
+    let password = req.params.pass;
+    Usuario.findByIdAndUpdate(idUsuario, { password: bcrypt.hashSync(password, 10) }, (err, usuario) => {
+        if (err) {
+            return res.status(500).json({
+                ok: false,
+                mensaje: 'Error al actualizar pass usuario',
+                errors: err
+            });
+        }
+        res.status(200).json({
+            ok: true,
+            usuario: usuario
+        });
+    });
+});
+
 module.exports = app;
