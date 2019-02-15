@@ -41,7 +41,7 @@ app.post('/:id', [mdAutenticacion.verificaToken], (req, res, next) => {
 
     // Nombre de archivo personalizado
     // 12312312312-123.png
-    var nombreArchivo = `${ id }-${ new Date().getMilliseconds() }.${ extensionArchivo }`;
+    var nombreArchivo = `${ id }.${ extensionArchivo }`;
     // Mover el archivo del temporal a un path
     var path = `././uploads/movil/${id}-${ nombreArchivo }`;
 
