@@ -5,6 +5,7 @@ var Schema = mongoose.Schema;
 
 
 var dataSchema = new Schema({
+    survey: { type: String },
     json: { type: JSON, required: [true, 'El json es necesario'] },
 
 });

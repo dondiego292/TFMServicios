@@ -10,7 +10,10 @@ var Data = require('../../models/data').Data;
 app.post('/', [mdAutenticacion.verificaToken], (req, res) => {
     var body = req.body;
 
-    var data = new Data({ json: body });
+    var data = new Data({
+        survey: body._survey,
+        json: body
+    });
 
     data.save((err, dataGuardada) => {
         if (err) {
