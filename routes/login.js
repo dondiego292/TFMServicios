@@ -93,6 +93,13 @@ function obtenerMenu(ROLE) {
             submenu: [
                 { titulo: 'Visor', url: '/visor' },
             ]
+        },
+        {
+            titulo: 'Reportes',
+            icono: 'mdi mdi-folder-lock-open',
+            submenu: [
+                { titulo: 'Reportes', url: '/reporte' }
+            ]
         }
     ];
 

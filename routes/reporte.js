@@ -26,9 +26,4 @@ app.get('/', [mdAutenticacion.verificaToken], (req, res, next) => {
 
 
 
-
-
-
-
-
 module.exports = app;

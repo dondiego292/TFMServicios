@@ -56,7 +56,7 @@ app.post('/:id', [mdAutenticacion.verificaToken], (req, res, next) => {
         }
         return res.status(200).json({
             ok: true,
-            mensaje: 'Imagen de subida saisfactoriamente',
+            mensaje: 'Imagen de subida saisfactoriamente ' + path,
         });
     });
 });
