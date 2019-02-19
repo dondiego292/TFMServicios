@@ -26,7 +26,7 @@ app.post('/', /*[mdAutenticacion.verificaToken],*/ (req, res) => {
                 fechaCreacion: new Date(b.fechaCreacion),
                 fechaVisitado: new Date(b.fechaVisitado),
                 fechaNacimiento: new Date(b.fechaNacimiento),
-                lugarNacimiento: new Date(b.lugarNacimiento),
+                lugarNacimiento: b.lugarNacimiento,
                 ciudad: b.ciudad,
                 latitud: b.latitud,
                 longitud: b.longitud,
