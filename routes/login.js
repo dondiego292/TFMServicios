@@ -99,7 +99,8 @@ function obtenerMenu(ROLE) {
             titulo: 'Reportes',
             icono: 'mdi mdi-folder-lock-open',
             submenu: [
-                { titulo: 'Reportes', url: '/reporte' }
+                { titulo: 'Publicidad', url: '/reporte' },
+                { titulo: 'Geolocalización', url: '/reporte2' }
             ]
         }
     ];
