@@ -83,6 +83,7 @@ function obtenerMenu(ROLE) {
                 { titulo: 'Usuarios', url: '/usuarios' },
                 { titulo: 'Gestores', url: '/gestor' },
                 { titulo: 'Supervisor', url: '/supervisor' },
+                { titulo: 'Carga Archivo', url: '/carga' },
                 //{ titulo: 'Hospitales', url: '/hospitales' },
                 //{ titulo: 'Médicos', url: '/medicos' }
             ]

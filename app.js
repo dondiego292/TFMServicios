@@ -37,6 +37,7 @@ var supervisorGestorRoutes = require('./routes/supervisor-gestor');
 var encuestaGestorRoutes = require('./routes/encuesta-gestor');
 var rutaRoutes = require('./routes/ruta');
 var reporteRoutes = require('./routes/reporte');
+var cargaRoutes = require('./routes/carga');
 //movil
 var movilLoginRoutes = require('./routes/movil/login');
 var movilEncuestaRoutes = require('./routes/movil/encuesta');
@@ -69,6 +70,7 @@ app.use('/supervisor', supervisorGestorRoutes);
 app.use('/encuesta/gestor', encuestaGestorRoutes);
 app.use('/ruta', rutaRoutes);
 app.use('/reporte', reporteRoutes);
+app.use('/carga', cargaRoutes);
 //movil
 app.use('/movil/login', movilLoginRoutes);
 app.use('/movil/encuesta', movilEncuestaRoutes);
