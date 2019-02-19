@@ -3,7 +3,7 @@ var mdAutenticacion = require('../middlewares/autenticacion');
 var app = express();
 var Data = require('../models/data').Data;
 var fs = require('fs');
-var Cliente = require('../../models/cliente').Cliente;
+var Cliente = require('../models/cliente').Cliente;
 
 
 // ==========================================
