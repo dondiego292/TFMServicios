@@ -8,8 +8,9 @@ var fs = require('fs');
 // ==========================================
 // Obtener todas las encuestas
 // ==========================================
-app.get('/', [mdAutenticacion.verificaToken], (req, res, next) => {
-    Data.find({ survey: 'Publicidad' }).exec(
+app.get('/:survey', [mdAutenticacion.verificaToken], (req, res, next) => {
+    let _survey = req.params.survey;
+    Data.find({ survey: _survey }).exec(
         (err, datas) => {
             if (err) {
                 return res.status(500).json({
