@@ -3,6 +3,7 @@ var mdAutenticacion = require('../middlewares/autenticacion');
 var app = express();
 var Data = require('../models/data').Data;
 var fs = require('fs');
+var Cliente = require('../../models/cliente').Cliente;
 
 
 // ==========================================
@@ -50,6 +51,23 @@ function base64_encode(file) {
     // convert binary data to base64 encoded string
     return new Buffer(bitmap).toString('base64');
 }
+
+app.get('/cliente/:id', [mdAutenticacion.verificaToken], (req, res, next) => {
+    let clienteID = req.params.id;
+    Cliente.findOne({ _id: clienteID }).exec((err, cliente) => {
+        if (err) {
+            return res.status(200).json({
+                ok: false,
+                mensaje: 'Error cargando cliente',
+                errors: err
+            });
+        }
+        res.status(200).json({
+            ok: true,
+            cliente: cliente
+        });
+    });
+});
 
 
 
